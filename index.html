@@ -12,30 +12,47 @@
     <section class="cont-calculator">
       <h1 class="title">계산기</h1>
       <div class="cont-cal">
-        <input class="input-number" type="text" disabled />
+        <input id="display" type="text" />
         <div class="btn-calculator">
-          <button>CE</button>
-          <button>(</button>
-          <button>)</button>
-          <button>×</button>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>÷</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>-</button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>+</button>
-          <button>.</button>
-          <button>0</button>
-          <button>←</button>
-          <button>=</button>
+          <button class="btn reset">CE</button>
+          <button class="btn opendoor">(</button>
+          <button class="btn closedoor">)</button>
+          <button class="btn multiple">×</button>
+          <button class="btn num7">7</button>
+          <button class="btn num8">8</button>
+          <button class="btn num9">9</button>
+          <button class="btn divide">÷</button>
+          <button class="btn num4">4</button>
+          <button class="btn num5">5</button>
+          <button class="btn num6">6</button>
+          <button class="btn minus">-</button>
+          <button class="btn num1">1</button>
+          <button class="btn num2">2</button>
+          <button class="btn num3">3</button>
+          <button class="btn plus">+</button>
+          <button class="btn point">.</button>
+          <button class="btn num0">0</button>
+          <button class="btn backspace">←</button>
+          <button class="btn result">=</button>
         </div>
       </div>
     </section>
+    <script>
+      function lookNumber() {
+        let btnNum = document.querySelectorAll('.btn');
+        console.log(btnNum);
+        btnNum.forEach((i) => {
+          i.addEventListener('click', (j) => {
+            let display = document.getElementById('display');
+            console.log(display);
+
+            let targetNumber = j.target.innerText;
+            display.value += targetNumber;
+          });
+        });
+      }
+
+      lookNumber();
+    </script>
   </body>
 </html>
