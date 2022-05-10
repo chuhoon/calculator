@@ -46,8 +46,17 @@
             let display = document.getElementById('display');
             console.log(display);
 
-            let targetNumber = j.target.innerText;
-            display.value += targetNumber;
+            if (j.target.innerText == 'CE') {
+              display.value = '';
+            } else if (j.target.innerText == '←') {
+              console.log(display.value);
+              display.value = display.value.substring(0, display.value.length);
+              console.log(display.value);
+            } else {
+              let targetNumber = j.target.innerText;
+              display.value += targetNumber;
+              console.log(display.value);
+            }
           });
         });
       }
