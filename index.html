@@ -12,56 +12,10 @@
     <section class="cont-calculator">
       <h1 class="title">계산기</h1>
       <div class="cont-cal">
-        <input id="display" type="text" />
-        <div class="btn-calculator">
-          <button class="btn reset">CE</button>
-          <button class="btn opendoor">(</button>
-          <button class="btn closedoor">)</button>
-          <button class="btn multiple">×</button>
-          <button class="btn num7">7</button>
-          <button class="btn num8">8</button>
-          <button class="btn num9">9</button>
-          <button class="btn divide">÷</button>
-          <button class="btn num4">4</button>
-          <button class="btn num5">5</button>
-          <button class="btn num6">6</button>
-          <button class="btn minus">-</button>
-          <button class="btn num1">1</button>
-          <button class="btn num2">2</button>
-          <button class="btn num3">3</button>
-          <button class="btn plus">+</button>
-          <button class="btn point">.</button>
-          <button class="btn num0">0</button>
-          <button class="btn backspace">←</button>
-          <button class="btn result">=</button>
-        </div>
+        <input id="display" type="text" disabled />
+        <div class="btn-calculator"></div>
       </div>
     </section>
-    <script>
-      function lookNumber() {
-        let btnNum = document.querySelectorAll('.btn');
-        console.log(btnNum);
-        btnNum.forEach((i) => {
-          i.addEventListener('click', (j) => {
-            let display = document.getElementById('display');
-            console.log(display);
-
-            if (j.target.innerText == 'CE') {
-              display.value = '';
-            } else if (j.target.innerText == '←') {
-              console.log(display.value);
-              display.value = display.value.substring(0, display.value.length);
-              console.log(display.value);
-            } else {
-              let targetNumber = j.target.innerText;
-              display.value += targetNumber;
-              console.log(display.value);
-            }
-          });
-        });
-      }
-
-      lookNumber();
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
